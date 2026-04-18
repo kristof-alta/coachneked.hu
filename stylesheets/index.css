@@ -28,7 +28,7 @@ body { font-family: Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color
 .hero { 
     height: calc(100vh - 200px); 
     min-height: 400px; 
-    background-image: url('/images/nightly.jpg'); 
+    background-image: url('images/nightly.jpg'); 
     background-size: cover; 
     background-position: center; 
     display: flex; 
