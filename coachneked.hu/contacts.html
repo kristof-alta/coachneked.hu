@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Lorem Ipsum.</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+    <div class="nav-placeholder" id="navPlaceholder">
+        <header class="main-nav" id="contactsNav">
+            <div class="nav-container">
+                <div class="nav-brand">Lorem Ipsum</div>
+                <nav>
+                    <a href="index.html">Lorem</a>
+                    <a href="reviews.html">Dolor</a>
+                    <a href="contacts.html">Amet</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <div class="section-title-wrapper">
+            <h1 class="section-title">Get In Touch</h1>
+        </div>
+
+        <section class="contact-wrapper">
+            
+            <div class="contact-left">
+                <img src="/images/profile.jpg" alt="Profile Picture" class="contact-profile-img">
+            </div>
+
+            <div class="contact-right">
+                
+                <div class="tile-box contact-box">
+                    <div class="tile-header">
+                        <div class="icon-placeholder-small">@</div>
+                        <h4>Email</h4>
+                    </div>
+                    <p>hello@loremipsum.com</p>
+                </div>
+                
+                <div class="tile-box contact-box">
+                    <div class="tile-header">
+                        <div class="icon-placeholder-small">#</div>
+                        <h4>Phone</h4>
+                    </div>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                
+                <div class="tile-box contact-box">
+                    <div class="tile-header">
+                        <div class="icon-placeholder-small">O</div>
+                        <h4>Location</h4>
+                    </div>
+                    <p>123 Sunset Boulevard<br>Cityville, State 12345</p>
+                </div>
+                
+                <div class="tile-box contact-box">
+                    <div class="tile-header">
+                        <div class="icon-placeholder-small">T</div>
+                        <h4>Hours</h4>
+                    </div>
+                    <p>Mon - Fri<br>9:00 AM - 5:00 PM</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="horizontal-box">
+            <h4>Send us a message</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>lorem ipsum dolor sit amet</p>
+    </footer>
+
+ <script>
+        const scrollArrow = document.getElementById('scrollArrow');
+        const reviewsNav = document.getElementById('reviewsNav');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const scrollPosition = window.innerHeight + scrollY;
+            const pageHeight = document.body.offsetHeight;
+
+            // 1. Hide arrow near the bottom
+
+            // 2. Transform the header when scrolling past 50px
+            //if (scrollY >= 50) {
+            //    reviewsNav.classList.add('scrolled');
+            //} else {
+              //  reviewsNav.classList.remove('scrolled');
+            //}
+        });
+    </script>
+</body>
+</html>
