@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Lorem Ipsum.</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+
+    <div class="nav-placeholder" id="navPlaceholder">
+        <header class="main-nav" id="aboutNav">
+            <div class="nav-container">
+                <div class="nav-brand">Lorem Ipsum</div>
+                <nav>
+                    <a href="index.html">Lorem</a>
+                    <a href="about.html">Ipsum</a>
+                    <a href="/reviews.html">Dolor</a>
+                    <a href="#about">Amet</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+
+
+
+    <main>
+        <div class="section-title-wrapper">
+            <h2 class="section-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A neque laudantium sed nisi itaque? Accusantium repudiandae suscipit, porro vel iure, reprehenderit obcaecati laborum id optio maxime eveniet, facilis amet esse.</h2>
+        </div>
+        
+        <section class="tiled-grid-container">
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>Highlight One</h4>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>Highlight Two</h4>
+                </div>
+                <p>Perspiciatis numquam quos labore culpa ullam vero expedita harum eveniet, necessitatibus deserunt.</p>
+            </div>
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>Highlight Three</h4>
+                </div>
+                <p>Totam autem doloribus cumque vitae commodi perspiciatis numquam quos labore culpa ullam vero.</p>
+            </div>
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>More Info 1</h4>
+                </div>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+            </div>
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>More Info 2</h4>
+                </div>
+                <p>Eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima.</p>
+            </div>
+            <div class="tile-box">
+                <div class="tile-header">
+                    <div class="icon-placeholder-small">[Icon]</div>
+                    <h4>More Info 3</h4>
+                </div>
+                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+            </div>
+        </section>
+
+        <div class="section-title-wrapper" style="margin-top: 100px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        
+        <section class="faq-container">
+            <div class="horizontal-box faq-item">
+                <h4>1. Lorem ipsum dolor sit amet?</h4>
+                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="horizontal-box faq-item">
+                <h4>2. Duis aute irure dolor in reprehenderit?</h4>
+                <p>In voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <div class="horizontal-box faq-item">
+                <h4>3. Sed ut perspiciatis unde omnis iste natus?</h4>
+                <p>Error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+            </div>
+            <div class="horizontal-box faq-item">
+                <h4>4. Nemo enim ipsam voluptatem quia voluptas?</h4>
+                <p>Sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+            </div>
+            <div class="horizontal-box faq-item">
+                <h4>5. Neque porro quisquam est, qui dolorem ipsum?</h4>
+                <p>Quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
+            </div>
+            <div class="horizontal-box faq-item">
+                <h4>6. Quis autem vel eum iure reprehenderit?</h4>
+                <p>Qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>lorem ipsum dolor sit amet</p>
+    </footer>
+
+    <div class="scroll-arrow" id="scrollArrow"></div>
+
+    <script>
+        const scrollArrow = document.getElementById('scrollArrow');
+        const aboutNav = document.getElementById('aboutNav');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const scrollPosition = window.innerHeight + scrollY;
+            const pageHeight = document.body.offsetHeight;
+
+            // 1. Hide arrow near the bottom
+            if (scrollPosition >= pageHeight - 50) {
+                scrollArrow.style.opacity = '0';
+            } else {
+                scrollArrow.style.opacity = '1';
+            }
+
+            // 2. Transform the header when scrolling past 50px (since there is no hero)
+            if (scrollY > 0) {
+                scrollArrow.style.opacity = '0';
+            } else {
+                scrollArrow.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

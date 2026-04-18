@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Lorem Ipsum.</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+    <div class="nav-placeholder" id="navPlaceholder">
+        <header class="main-nav" id="reviewsNav">
+            <div class="nav-container">
+                <div class="nav-brand">Lorem Ipsum</div>
+                <nav>
+                    <a href="index.html">Lorem</a>
+                    <a href="reviews.html">Dolor</a>
+                    <a href="contacts.html">Amet</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <div class="section-title-wrapper">
+            <h2 class="section-title">Client Stories</h2>
+        </div>
+        
+        <section class="floating-reviews-container">
+            
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">JD</div>
+                    <div class="bubble-meta">
+                        <h4>John Doe</h4>
+                        <span class="occupation">Entrepreneur</span>
+                    </div>
+                </div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</p>
+            </div>
+
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">AS</div>
+                    <div class="bubble-meta">
+                        <h4>Alice Smith</h4>
+                        <span class="occupation">Creative Director</span>
+                    </div>
+                </div>
+                <p>"Perspiciatis numquam quos labore culpa ullam vero expedita harum eveniet, necessitatibus deserunt. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."</p>
+            </div>
+
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">MR</div>
+                    <div class="bubble-meta">
+                        <h4>Michael Roe</h4>
+                        <span class="occupation">Software Engineer</span>
+                    </div>
+                </div>
+                <p>"Totam autem doloribus cumque vitae commodi perspiciatis numquam quos labore culpa ullam vero. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."</p>
+            </div>
+
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">EJ</div>
+                    <div class="bubble-meta">
+                        <h4>Emma Jones</h4>
+                        <span class="occupation">Marketing Executive</span>
+                    </div>
+                </div>
+                <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">EJ</div>
+                    <div class="bubble-meta">
+                        <h4>Emma Jones</h4>
+                        <span class="occupation">Marketing Executive</span>
+                    </div>
+                </div>
+                <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+
+            <div class="review-bubble">
+                <div class="bubble-header">
+                    <div class="icon-placeholder-small">EJ</div>
+                    <div class="bubble-meta">
+                        <h4>Emma Jones</h4>
+                        <span class="occupation">Marketing Executive</span>
+                    </div>
+                </div>
+                <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+
+        </section>
+
+       <section class="horizontal-box">
+            <h4>Lorem Ipsum Dolor Sit</h4>
+            <p class="column-paragraph">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, voluptates quis. Laborum possimus facilis ut exercitationem totam soluta sint quibusdam ipsam, blanditiis dolor a molestias, tenetur suscipit minus sapiente culpa.</p>
+            <div class="contact-cta">
+                    If this question is related to general inquiries, <a href="/contacts.html">contact me!</a>
+                </div>
+
+        
+        </section>
+
+    </main>
+
+    <footer>
+        <p>lorem ipsum dolor sit amet</p>
+    </footer>
+
+    <script>
+        const scrollArrow = document.getElementById('scrollArrow');
+        const reviewsNav = document.getElementById('reviewsNav');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const scrollPosition = window.innerHeight + scrollY;
+            const pageHeight = document.body.offsetHeight;
+
+            // 1. Hide arrow near the bottom
+
+            // 2. Transform the header when scrolling past 50px
+            if (scrollY >= 50) {
+                reviewsNav.classList.add('scrolled');
+            } else {
+                reviewsNav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

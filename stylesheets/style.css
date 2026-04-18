@@ -1,0 +1,420 @@
+/* =========================================
+   --- 1. GLOBAL VARIABLES & RESETS --- 
+========================================= */
+:root {
+    /* Colors */
+    --theme-color: #F57C00;
+    --theme-light: rgba(245, 124, 0, 0.15);
+    --theme-border: rgba(245, 124, 0, 0.4);
+    --theme-shadow: rgba(245, 124, 0, 0.25);
+    
+    --text-dark: #333;
+    --text-muted: #555;
+    --bg-light: #fffaf8;
+    
+    /* Glassmorphism settings */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --blur-strong: blur(15px);
+    --blur-standard: blur(12px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light); 
+}
+
+/* =========================================
+   --- 2. HERO SECTION --- 
+========================================= */
+.hero {
+    height: calc(100vh - 200px); 
+    min-height: 400px; 
+    background-image: url('/images/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+.hero-glass-box {
+    background-color: rgba(0, 0, 0, 0.45); 
+    backdrop-filter: var(--blur-standard);
+    -webkit-backdrop-filter: var(--blur-standard);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.title-box { padding: 15px 50px; }
+.desc-box { padding: 15px 30px; }
+
+.title-box h1 { 
+    font-size: 3.5rem; 
+    letter-spacing: 2px; 
+    color: var(--theme-color); 
+}
+
+.desc-box p { 
+    font-size: 1.2rem; 
+    font-weight: 300; 
+}
+
+/* =========================================
+   --- 3. NAVIGATION HEADER --- 
+========================================= */
+.main-nav {
+    height: 100px; 
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: var(--blur-strong);
+    -webkit-backdrop-filter: var(--blur-strong);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: absolute; 
+    top: calc(100vh - 200px); 
+    left: 0;
+    z-index: 9999;
+    transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.main-nav.scrolled {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: 70px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 50px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--theme-color); 
+    letter-spacing: 1px;
+    transition: font-size 0.4s ease;
+}
+
+.main-nav.scrolled .nav-brand { font-size: 1.5rem; }
+
+.main-nav nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.3rem; 
+    font-weight: 700;
+    margin-left: 15px; 
+    padding: 12px 24px; 
+    border-radius: 12px; 
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid transparent; 
+    backdrop-filter: var(--blur-standard);
+    -webkit-backdrop-filter: var(--blur-standard); 
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, font-size 0.3s ease, padding 0.3s ease; 
+}
+
+.main-nav.scrolled nav a {
+    font-size: 1.1rem;
+    padding: 8px 18px;
+}
+
+.main-nav nav a:hover {
+    color: var(--theme-color); 
+    transform: translateY(-6px) scale(1.05); 
+    background-color: var(--theme-light); 
+    border-color: var(--theme-border); 
+    box-shadow: 0 10px 25px var(--theme-shadow); 
+}
+
+.main-nav.scrolled nav a:hover { 
+    transform: translateY(-3px) scale(1.05); 
+}
+
+/* =========================================
+   --- 4. MAIN LAYOUT & TYPOGRAPHY --- 
+========================================= */
+main {
+    position: relative;
+    padding: 240px 20px 80px; 
+    border: none; 
+    background: url('/images/nightly.jpg') center/cover;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backdrop-filter: var(--blur-standard);
+    -webkit-backdrop-filter: var(--blur-standard); 
+    background-color: rgba(255, 255, 255, 0.6); 
+    z-index: 0;
+}
+
+.section-title-wrapper {
+    position: relative;
+    z-index: 1; 
+    text-align: center;
+    margin-bottom: 50px; 
+}
+
+.section-title {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: var(--theme-color); 
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   --- 5. STANDARD UI COMPONENTS --- 
+========================================= */
+.about-section {
+    position: relative;
+    z-index: 1;
+    background: var(--glass-bg);
+    padding: 40px 60px;
+    margin: 0 auto 80px; 
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--glass-border);
+}
+
+.about-text { flex: 1.2; }
+.about-text h2 { font-size: 2.2rem; color: var(--theme-color); margin-bottom: 20px; letter-spacing: 1px; }
+.about-text p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+.about-image { flex: 0.8; display: flex; justify-content: center; }
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--theme-shadow); 
+    object-fit: cover;
+}
+
+.horizontal-box {
+    position: relative; 
+    background: var(--glass-bg);
+    text-align: center; 
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); 
+    border: 1px solid var(--glass-border); 
+    
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+}
+
+.horizontal-box { padding: 40px 60px 70px 60px; margin: 40px auto 0; max-width: 1400px; }
+
+
+.column-paragraph{
+    white-space: normal;
+    color: var(--text-muted); 
+    font-size: 1rem;
+}
+
+
+.contact-cta {
+    background-color: var(--bg-light); border-left: 4px solid var(--theme-color);
+    padding: 15px 20px; border-radius: 0 8px 8px 0; margin-top: 30px; margin-bottom: 10px;
+    font-size: 0.95rem; color: var(--text-dark); box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: left;
+}
+.contact-cta a { color: var(--theme-color); font-weight: 700; text-decoration: none; transition: color 0.3s ease; margin-left: 5px; }
+.contact-cta a:hover { color: #D84315; text-decoration: underline; }
+
+
+
+/*.scroll-arrow {
+    position: fixed; 
+    bottom: 40px; 
+    left: 50%;
+    filter: drop-shadow(0px 2px 4px rgba(245, 124, 0, 0.4)); 
+    width: 24px;
+    height: 24px;
+    border-left: 3px solid var(--theme-color); 
+    border-bottom: 3px solid var(--theme-color);
+    transform: translateX(-50%) rotate(-45deg);
+    animation: bounce 2s infinite;
+    z-index: 1000;
+    transition: opacity 0.3s ease; 
+    pointer-events: none; 
+}
+*/
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0) rotate(-45deg); }
+    40% { transform: translateX(-50%) translateY(-15px) rotate(-45deg); }
+    60% { transform: translateX(-50%) translateY(-7px) rotate(-45deg); }
+}
+
+/* =========================================
+   --- 6. FOOTER --- 
+========================================= */
+footer {
+    position: relative; 
+    background-color: #4A4A4A; 
+    height: 40px; 
+    color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden; 
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   --- 7. SPECIFIC PAGE STYLING --- 
+========================================= */
+
+/* --- REVIEWS.HTML --- */
+#reviewsNav { top: 0; }
+
+.floating-reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+    max-width: 1400px; 
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.review-bubble {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-standard);
+    -webkit-backdrop-filter: var(--blur-standard);
+    padding: 40px;
+    border-radius: 30px; 
+    width: 80%; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative;
+}
+
+.review-bubble:nth-child(odd) { align-self: flex-start; border-bottom-left-radius: 5px; }
+.review-bubble:nth-child(even) { align-self: flex-end; border-bottom-right-radius: 5px; }
+
+.review-bubble:hover {
+    transform: translateY(-12px) scale(1.02); 
+    box-shadow: 0 20px 40px var(--theme-shadow); 
+    border-color: var(--theme-border);
+    z-index: 2; 
+}
+
+.bubble-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.bubble-meta h4 { margin: 0; font-size: 1.4rem; color: var(--text-dark); }
+.bubble-meta .occupation { font-size: 0.95rem; color: var(--theme-color); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-top: 2px; }
+.review-bubble p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; font-style: italic; }
+
+.icon-placeholder-small {
+    width: 45px; height: 45px;
+    background-color: #FFF3E0; color: var(--theme-color); border: 2px dashed #FFB74D;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.8rem; flex-shrink: 0;
+}
+
+/* --- CONTACTS / ABOUT.HTML --- */
+#contactsNav { top: 0; }
+
+.contact-wrapper {
+    position: relative; z-index: 1; display: flex; gap: 50px; max-width: 1400px; margin: 0 auto 80px; align-items: stretch; 
+}
+
+.contact-left { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+
+.contact-profile-img {
+    width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 10px 30px var(--theme-shadow); 
+    object-fit: cover; border: 1px solid var(--glass-border);
+}
+
+.contact-right { flex: 1.2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.contact-box { margin: 0; display: flex; flex-direction: column; justify-content: center; background-color:var(--bg-light); border-radius: 40px; text-align: center;} /* ÉN MÓDOSÍTOTTAM!!!*/
+
+
+/*.tile-header{
+    
+}*/
+
+/* =========================================
+   --- 8. MOBILE & RESPONSIVE QUERIES --- 
+========================================= */
+@media (max-width: 900px) {
+    .contact-right { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    /* Home Adjustments */
+    .hero { height: auto; padding: 60px 0; }
+    .title-box h1 { font-size: 2.5rem; }
+    .title-box, .desc-box { padding: 20px; width: 100%; }
+    .nav-container { flex-direction: column; padding: 20px; gap: 20px; }
+    
+    .main-nav, .main-nav.scrolled { 
+        position: static !important; 
+        height: auto !important; 
+        background-color: rgba(255,255,255,0.95) !important; 
+        box-shadow: none !important; 
+    }
+    
+    .main-nav nav { display: flex; flex-direction: column; gap: 15px; text-align: center; }
+    .main-nav nav a { margin-left: 0; }
+    
+    main { padding-top: 60px; }
+    .about-section { flex-direction: column-reverse; padding: 30px 20px; text-align: center; gap: 30px; }
+    .about-image img { max-width: 250px; }
+    .horizontal-box { padding: 30px 20px; } 
+
+    /* Sub-Page Adjustments */
+    #reviewsNav, #reviewsNav.scrolled, #contactsNav, #contactsNav.scrolled {
+        position: static !important; height: auto !important; background-color: rgba(255, 255, 255, 0.95) !important; box-shadow: none !important;
+    }
+    
+    .review-bubble { width: 100%; border-radius: 20px !important; padding: 30px 20px; }
+    .bottom-action-links { flex-direction: column; padding: 0 20px; gap: 50px; }
+    .action-link-box { max-width: 100%; }
+    
+    .contact-wrapper { flex-direction: column; padding: 0 20px; }
+    .contact-profile-img { max-width: 300px; }
+}
