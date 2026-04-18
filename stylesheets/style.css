@@ -170,7 +170,7 @@ main {
     position: relative;
     padding: 240px 20px 80px; 
     border: none; 
-    background: url('/images/nightly.jpg') center/cover;
+    background: url('images/nightly.jpg') center/cover;
 }
 
 main::before {
